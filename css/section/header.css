@@ -42,6 +42,15 @@
   margin-left: 240px;
   transition: margin 0.5s;
 }
+.nav-blue-bar {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 0;
+  height: 1px;
+  background: #0072ff;
+}
 .gnb {
   /* display:flex;라 작성하면 flex-container가 됨 */
   display: flex;
