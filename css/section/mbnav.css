@@ -1,0 +1,193 @@
+@charset "utf-8";
+.mb-wrap {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999998;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.mb-wrap-active {
+  opacity: 1;
+  top: 0;
+}
+.mb-gnb {
+  max-width: 750px;
+  width: 75%;
+  height: 100%;
+  background: #fff;
+  transform: translateX(10px);
+  transition: transform 0.5s;
+}
+.mb-wrap-active .mb-gnb {
+  transform: translateX(0);
+}
+
+.mb-nav {
+  display: none;
+
+  position: fixed;
+  right: 15px;
+  top: 20px;
+  width: 30px;
+  height: 25px;
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+  z-index: 999999;
+  font-size: 0;
+  /* overflow: hidden; */
+}
+.mb-nav span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2px;
+}
+.mb-nav span:nth-child(1) {
+  background: #222;
+  top: 0;
+
+  transform-origin: 0 0;
+}
+.mb-nav span:nth-child(2) {
+  background: #0072ff;
+  top: calc(50% - 1px);
+  left: 50%;
+  transition: opacity 0.3s;
+
+  width: calc(100% / 2);
+}
+.mb-nav span:nth-child(3) {
+  background: #222;
+  top: 100%;
+  opacity: 0;
+
+  transform-origin: 0 100%;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.mb-nav-active span:nth-child(1) {
+  width: 36px;
+  transform: rotate(45deg);
+  transform: rotate(45deg) translate(1px 1px);
+  transition: transform 0.3s;
+}
+.mb-nav-active span:nth-child(2) {
+  opacity: 0;
+}
+.mb-nav-active span:nth-child(3) {
+  width: 36px;
+  opacity: 1;
+  transform: rotate(-45deg);
+  transition: transform 0.3s;
+}
+@media screen and (max-width: 1000px) {
+  .mb-nav {
+    display: block;
+  }
+}
+
+.mb-gnb {
+  padding-top: 60px;
+}
+.mb-top-menu {
+  background: #f5f5f5;
+  padding: 10px 20px;
+  display: flex;
+  gap: 0 15px;
+}
+.mb-top-menu a {
+  font-size: 12px;
+}
+.side-menu {
+}
+.side-menu > li {
+}
+.side-menu > li > a {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 0 20px;
+
+  font-size: 16px;
+  color: #222;
+  line-height: 52px;
+}
+.side-menu > li > a > i {
+  font-size: 10px;
+}
+
+.side-menu > li > .submenu {
+  display: none;
+
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  background-color: #f2f3f5;
+}
+.side-menu > li > .submenu > li > a {
+  display: block;
+  font-size: 14px;
+  color: #777;
+  text-align: left;
+}
+/* 코드 비교 (.mb-nav-active span:nth-child(3) ) */
+/* .mb-nav {
+  position: fixed;
+  right: 15px;
+  top: 20px;
+  width: 30px;
+  height: 25px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 999999;
+  font-size: 0;
+}
+.mb-nav span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2px;
+}
+.mb-nav span:nth-child(1) {
+  background: #222;
+  top: 0;
+  transform-origin: 0 0;
+  transition: transform 0.3s;
+}
+.mb-nav span:nth-child(2) {
+  background: #0072ff;
+  top: calc(50% - 1px);
+  left: 50%;
+  width: 50%;
+  transition: opacity 0.3s;
+}
+.mb-nav span:nth-child(3) {
+  background: #222;
+  top: 100%;
+  opacity: 0;
+  transform-origin: 0 100%;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.mb-nav:hover span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, -2px);
+}
+.mb-nav:hover span:nth-child(2) {
+  opacity: 0;
+}
+.mb-nav:hover span:nth-child(3) {
+  opacity: 1;
+  transform: rotate(-45deg) translate(5px, 2px);
+} */

@@ -72,19 +72,95 @@
 
     <!-- reset.css 적용 -->
     <link rel="stylesheet" href="css/reset.css" />
-    <!-- 웹폰트? -->
+    <!-- fontaswome 사용 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Anime.js 적용 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="js/mbnav.js"></script>
     <script src="js/header.js"></script>
   </head>
   <body>
     <div class="wrap">
+      <!-- mb dim -->
+      <div class="mb-wrap">
+        <nav class="mb-gnb">
+          <div class="mb-top-menu">
+            <a href="#">회원가입</a>
+            <a href="#">로그인</a>
+            <a href="#">ENG</a>
+          </div>
+          <ul class="side-menu">
+            <li>
+              <a href="#"
+                ><span>회사소개</span><i class="fa-solid fa-chevron-down"></i
+              ></a>
+              <ul class="submenu">
+                <li><a href="#">인사말</a></li>
+                <li><a href="#">연혁</a></li>
+                <li><a href="#">오시는 길</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"
+                ><span>탄소중립대응 친환경 제품</span
+                ><i class="fa-solid fa-chevron-down"></i
+              ></a>
+              <ul class="submenu">
+                <li><a href="#">플라스틱 포장재</a></li>
+                <li><a href="#">농업용 필름</a></li>
+                <li><a href="#">자동차용 소재</a></li>
+                <li><a href="#">코팅종이</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"
+                ><span>뉴스ᆞ보도자료</span
+                ><i class="fa-solid fa-chevron-down"></i
+              ></a>
+              <ul class="submenu">
+                <li><a href="#">개발제품 뉴스ᆞ보도자료</a></li>
+                <li><a href="#">탄소중립 관련 뉴스ᆞ보도자료</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"
+                ><span>인증</span><i class="fa-solid fa-chevron-down"></i
+              ></a>
+              <ul class="submenu">
+                <li><a href="#">UL인증</a></li>
+                <li><a href="#">녹색인증</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"
+                ><span>제품문의</span><i class="fa-solid fa-chevron-down"></i
+              ></a>
+              <ul class="submenu">
+                <li><a href="#">제품문의</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"
+                ><span>고객센터</span><i class="fa-solid fa-chevron-down"></i
+              ></a>
+              <ul class="submenu">
+                <li><a href="#">공지사항</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- mb nav -->
+      <button class="mb-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <!-- header -->
       <header class="header">
         <a href="#" class="logo">
@@ -110,10 +186,10 @@
               </ul>
             </li>
             <li>
-              <a href="#">뉴스.보도자료</a>
+              <a href="#">뉴스ᆞ보도자료</a>
               <ul class="submenu">
-                <li><a href="#">개발제품 뉴스 . 보도자료</a></li>
-                <li><a href="#">탄소중립 관련 뉴스 . 보도자료</a></li>
+                <li><a href="#">개발제품 뉴스ᆞ보도자료</a></li>
+                <li><a href="#">탄소중립 관련 뉴스ᆞ보도자료</a></li>
               </ul>
             </li>
             <li>

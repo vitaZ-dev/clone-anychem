@@ -1,6 +1,4 @@
-// 웹브라우저에 html, css, js, image를 모두 불러들이고
-//렌더링 준비가 끝나면 그 때 function의 블럭 안쪽을 실행
-window.onload = function () {
+window.addEventListener("load", function () {
   // nav 에 마우스 hover하면 header 높이 260px로 변화주기
   // nav 에 마우스 out  하면 header 높이 100px로 변화주기
 
@@ -38,4 +36,6 @@ window.onload = function () {
 
   // 클래스를 추가했다가 제거했다가 하는 방법이 더 좋다!
   // js를 안 고치고 css만 고치면 되니까 더 좋다!
-};
+
+
+});
