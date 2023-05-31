@@ -1,5 +1,19 @@
 .visual {
   position: relative;
+  margin-top: 100px;
+}
+.visual-fixed {
+  /* header 의 높이값 */
+  margin-top: 100px !important;
+}
+@media screen and (max-width: 1000px) {
+  .visual {
+    margin-top: 75px;
+  }
+  .visual-fixed {
+    /* header 의 높이값 */
+    margin-top: 75px !important;
+  }
 }
 .visual .sw-visual .swiper-slide {
   height: 780px;
@@ -14,28 +28,28 @@
   bottom: 50px;
   z-index: 9999;
 }
-/* 아마 안될거야 */
-body {
-  counter-reset: sw-count;
-}
-.sw-visual-pg .swiper-pagination-bullet::before {
-  counter-increment: sw-count;
-  content: "0" counter(sw-count);
-  position: absolute;
-  left: 0;
-  top: 0;
-}
+
 .sw-visual-pg .swiper-pagination-bullet {
   position: relative;
   background: none;
   border-radius: 0;
-  opacity: 0.5;
+  opacity: 1;
   margin: 0 !important;
   width: 30px;
+  height: 40px;
 
   color: #fff;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid transparent;
   transition: width 0.5s;
+}
+.sw-visual-pg .swiper-pagination-bullet em {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  font-family: "Noto Sans KR", sans-serif;
 }
 .sw-visual-pg .swiper-pagination-bullet-active {
   position: relative;
@@ -57,6 +71,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
+  padding-left: 45px;
   z-index: 1;
 }
 .visual-text .inner {
@@ -75,8 +90,7 @@ body {
   line-height: 1.6;
   font-size: 17px;
   font-weight: 400;
-  color: #fff;
-  opacity: 0.6;
+  color: rgba(255, 255, 255, 0.6);
 }
 .visual-link {
   display: inline-block;
@@ -118,5 +132,34 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .visual .sw-visual .swiper-slide {
+    height: 575px;
+  }
+  /* .sw-visual-pg .swiper-pagination-bullet-active {
+    width: 92px;
+  } */
+  .visual-title {
+    font-size: 40px;
+  }
+  .visual-link {
+    background: #0072ff;
+  }
+}
+@media screen and (max-width: 760px) {
+  .visual .sw-visual .swiper-slide {
+    height: 465px;
+  }
+  .sw-visual-pg .swiper-pagination-bullet-active {
+    width: 92px;
+  }
+  .visual-title {
+    font-size: 34px;
+  }
+  .visual-text {
+    padding-left: 20px;
   }
 }
