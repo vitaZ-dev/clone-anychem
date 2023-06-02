@@ -104,4 +104,29 @@ window.addEventListener("load", function () {
   }
 
   getData();
+
+  // 슬라이드 멈추기/재생하기
+  const btn = document.querySelector(".sw-goods-pause");
+  const icon = btn.querySelector(".fa-pause");
+  let swGoodsState = "play";
+  btn.onclick = (event) => {
+    /*
+    // 가장 짧게 최적화
+    const isPlaying = swGoodsState === "play";
+    swGoods.autoplay[isPlaying ? "stop" : "start"]();
+    swGoodsState = isPlaying ? "stop" : "play";
+    icon.classList.toggle("fa-play");
+    */
+    if (swGoodsState === "play") {
+      // 슬라이드 멈춰
+      swGoods.autoplay.stop();
+      swGoodsState = "stop";
+      icon.classList.add("fa-play");
+    } else {
+      // 슬라이드 재실행
+      swGoods.autoplay.start();
+      swGoodsState = "play";
+      icon.classList.remove("fa-play");
+    }
+  };
 });
