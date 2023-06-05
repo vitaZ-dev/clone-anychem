@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
   // Swiper 변수
   let swGoods;
-  const SLIDECOUNT = 4;
+  // const SLIDECOUNT = 4;
 
   // fetch 버전
   // fetch("./data/gooddata.json")
@@ -25,9 +25,12 @@ window.addEventListener("load", function () {
   function makeSlide(_result) {
     let html = ``;
     let copyArr = [..._result.goods];
-    if (copyArr.length <= 4) {
-      copyArr = [..._result.goods, ..._result.goods];
-    }
+    // Swiper 버전에 따른 문제 발생
+    // 강제 목록 추가 제거
+    // if (copyArr.length <= 4) {
+    //   copyArr = [..._result.goods, ..._result.goods];
+    // }
+
     copyArr.forEach((item) => {
       let tag = `
         <div class="swiper-slide">
@@ -52,26 +55,44 @@ window.addEventListener("load", function () {
   function makeSlideShow() {
     // Swiper
     swGoods = new Swiper(".sw-goods", {
-      slidesPerView: 3,
       loop: true,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-      },
+      speed: 1000,
+      slidesPerView: 3 /* */,
+      spaceBetween: 20,
       navigation: {
         prevEl: ".sw-goods-prev",
         nextEl: ".sw-goods-next",
       },
+      autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1400: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      },
     });
     swGoods.on("slideChange", function () {
-      let count = this.realIndex % SLIDECOUNT;
-      console.log("slide changed : " + count);
-      focusMenu(count);
+      // let count = this.realIndex % SLIDECOUNT;
+      // console.log("slide changed : " + count);
+      focusMenu(this.realIndex);
     });
+
+    focusMenu(0);
   }
 
   function focusMenu(_index) {
-    let lis = document.querySelectorAll(".goods-list li a");
+    let lis = document.querySelectorAll(".goods-list li");
     lis.forEach((item, index) => {
       // 순서번호랑 슬라이드 번호가 같다면 add
       if (index === _index) {
