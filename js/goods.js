@@ -33,19 +33,19 @@ window.addEventListener("load", function () {
 
     copyArr.forEach((item) => {
       let tag = `
-        <div class="swiper-slide">
-          <a href=${item.link} class="good-link">
-            <div class="good-item">
-              <div class="good-item-img">
-                <img src="images/${item.image}" alt="${item.alt}" />
-              </div>
-              <div class="good-item-text">
-                <p>${item.title}</p>
-                <span>${item.desc}</span>
-              </div>
+      <div class="swiper-slide">
+        <a href="${item.link}" class="good-link">
+          <div class="good-item">
+            <div class="good-item-img" style="background-image:url(images/${item.image});">
+              
             </div>
-          </a>
-        </div>
+            <div class="good-item-txt">
+              <p>${item.title}</p>
+              <span>${item.desc}</span>
+            </div>
+          </div>
+        </a>
+      </div>
       `;
       html += tag;
     });
@@ -130,7 +130,7 @@ window.addEventListener("load", function () {
   const btn = document.querySelector(".sw-goods-pause");
   const icon = btn.querySelector(".fa-pause");
   let swGoodsState = "play";
-  btn.onclick = (event) => {
+  btn.onclick = () => {
     /*
     // 가장 짧게 최적화
     const isPlaying = swGoodsState === "play";
