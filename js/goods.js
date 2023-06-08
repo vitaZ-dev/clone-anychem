@@ -69,11 +69,11 @@ window.addEventListener("load", function () {
       },
       breakpoints: {
         480: {
-          slidesPerView: 2,
+          slidesPerView: 1,
           spaceBetween: 30,
         },
         768: {
-          slidesPerView: 3,
+          slidesPerView: 2,
           spaceBetween: 30,
         },
         1400: {
