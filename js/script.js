@@ -1,3 +1,5 @@
 window.addEventListener("load", function () {
-  AOS.init();
+  this.window.addEventListener("scroll", function () {
+    AOS.init();
+  });
 });
